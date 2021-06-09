@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.selectpicker-section {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  width: 100%;
+}
+
+.show-cost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.text-total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text-count {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.list-items {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.list-item {
+  padding: 5px;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: minmax(100px, 2fr) auto 3fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    ". iconpic title cost ."
+    ". iconpic date cost .";
+}
+
+.item-icon {
+  margin-right: 5px;
+  grid-area: iconpic;
+}
+
+.item-title {
+  grid-area: title;
+}
+
+.item-date {
+  grid-area: date;
+}
+
+.item-cost {
+  grid-area: cost;
+}
+
+.item-name {
+  margin: 5px;
+  padding: 5px;
+  border: 1px rgb(53, 51, 50) solid;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.btn-wrapper {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-page,
+.edit-page {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-page > .form-label,
+.edit-page > .form-label {
+  margin: 10px;
+  width: 100px;
+}
+
+.text-ps {
+  margin-left: 40px;
+  width: 120px;
+}
+
+.add-page > .form-group,
+.edit-page > .form-group {
+  width: 600px;
+}
