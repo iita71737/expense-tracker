@@ -2,7 +2,7 @@
 A simple web application about CRUD 
 Use **Node.js** , **Express.js** and **Express-handlebars** to build in
 
-![Demo](https://github.com/iita71737/restaurant_list/blob/master/public/image/expense-tracker-img.PNG)
+![Demo](https://github.com/iita71737/expense-tracker/blob/master/public/image/expense-tracker-img.PNG)
 
 ## User Stories
 - 在首頁一次瀏覽所有支出的清單
