@@ -22,12 +22,13 @@
 <div class="container">
   <div class="list-wrapper">
     <div class="list-group">
+        {{#each records }}
       <div class="list-items">
         <a href="#" class="item-name list-group-item-action list-item">
-          <div class="item-icon"><i class="fas fa-utensils fa-3x"></i></div>
-          <div class="item-title">午餐</div>
-          <div class="item-date">2010-01-22</div>
-          <div class="item-cost">$60</div>
+          <div class="item-icon"><i class="{{this.iconName.cateIcon3x}}"></i></div>
+          <div class="item-title">{{this.name}}</div>
+          <div class="item-date">{{this.date}}</div>
+          <div class="item-cost">{{this.amount}}</div>
         </a>
         <a href="/edit">
           <button
@@ -39,40 +40,7 @@
           <button type="button" class="btn btn-danger list-item">Delete</button>
         </a>
       </div>
-      <div class="list-items">
-        <a href="#" class="item-name list-group-item-action list-item">
-          <div class="item-icon"><i class="fas fa-utensils"></i></div>
-          <div class="item-title">午餐</div>
-          <div class="item-date">2010-01-22</div>
-          <div class="item-cost">$60</div>
-        </a>
-        <a href="/edit">
-          <button
-            type="button"
-            class="btn btn-success list-item"
-          >Modify</button>
-        </a>
-        <a href="/delete">
-          <button type="button" class="btn btn-danger list-item">Delete</button>
-        </a>
-      </div><div class="list-items">
-        <a href="#" class="item-name list-group-item-action list-item">
-          <div class="item-icon"><i class="fas fa-utensils"></i></div>
-          <div class="item-title">午餐</div>
-          <div class="item-date">2010-01-22</div>
-          <div class="item-cost">$60</div>
-        </a>
-        <a href="/edit">
-          <button
-            type="button"
-            class="btn btn-success list-item"
-          >Modify</button>
-        </a>
-        <a href="/delete">
-          <button type="button" class="btn btn-danger list-item">Delete</button>
-        </a>
-
-      </div>
+     {{/each}}
     </div>
   </div>
   <div class="btn-wrapper">

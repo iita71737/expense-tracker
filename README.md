@@ -16,6 +16,8 @@ Use **Node.js** , **Express.js** and **Express-handlebars** to build in
 - __[Node.js](https://nodejs.org/en/)__ 
 - __[Express.js](https://www.npmjs.com/package/express)__ 
 - __[Express Handlebars](https://www.npmjs.com/package/express-handlebars)__
+- __[Mongoose](https://mongoosejs.com/)__
+- __[Mongodb](https://www.mongodb.com/)__
 
 ## Quick start
 

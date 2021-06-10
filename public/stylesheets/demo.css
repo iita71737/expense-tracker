@@ -39,7 +39,7 @@
   padding: 5px;
   margin: 5px;
   display: grid;
-  grid-template-columns: minmax(100px, 2fr) auto 3fr 1fr 1fr;
+  grid-template-columns: minmax(100px, 2fr) minmax(auto, 65px) 1fr 1fr 1fr;
   grid-template-rows: repeat(2, auto);
   grid-template-areas:
     ". iconpic title cost ."
