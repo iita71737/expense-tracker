@@ -11,9 +11,6 @@ H.registerHelpers(Handlebars)
 const flash = require('connect-flash')
 const methodOverride = require('method-override')
 
-const Record = require('./models/record')
-const Category =  require('./models/category')
-
 const mongoose = require('mongoose') // 載入 mongoose
 mongoose.connect('mongodb://localhost/expense-record', { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
 // 取得資料庫連線狀態

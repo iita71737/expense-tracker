@@ -20,7 +20,7 @@
         <select class="form-control form-select" id="exampleFormControlSelect1" name="category_en" required>
             <option value="" selected >Open this select menu</option>
             {{#each categories}}
-                <option value="{{ this.cateName }}" {{#isEqual this.cateName 'this.cateName'}}selected{{/isEqual}}>
+                <option value="{{ this.cateName }}" {{#if (eq this.cateName 'this.cateName' )}}selected{{/if}}>
                     {{ this.title }}
                 </option>
             {{/each}}
