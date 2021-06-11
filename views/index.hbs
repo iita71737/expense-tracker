@@ -15,7 +15,7 @@
 <div class="container">
   <div class="show-cost">
     <div class="text-total">Total：</div>
-    <div class="text-count">25260</div>
+    <div class="text-count">{{this.totalAmount}}</div>
   </div>
 </div>
 
@@ -30,13 +30,13 @@
           <div class="item-date">{{this.date}}</div>
           <div class="item-cost">{{this.amount}}</div>
         </a>
-        <a href="/edit">
+        <a href="/records/{{this._id}}">
           <button
             type="button"
             class="btn btn-success list-item-btn"
           >Modify</button>
         </a>
-        <a href="/delete">
+        <a href="/records/delete">
           <button type="button" class="btn btn-danger list-item-btn">Delete</button>
         </a>
       </div>
@@ -44,7 +44,7 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="/new">
+    <a href="/records/new">
       <button type="button" class="btn btn-primary">Add Expense</button>
     </a>
   </div>

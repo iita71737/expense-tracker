@@ -25,12 +25,19 @@ try{
             //iconFilter get icon by compare to category
             record.iconName  = categories.find( item => item.cateName === record.category_en ? item.cateIcon3x : "" )
         })
-    console.log(records)
-    res.render('index', { records, categories } )
-    }
-    catch (e) {
-        console.warn(e)
-    }
+    
+    //計算總金額
+    let totalAmount = records.reduce((prev, record) => prev += record.amount, 0)
+
+    res.render('index', { 
+        records,
+        categories,
+        totalAmount
+    })
+}
+catch (e) {
+    console.warn(e)
+}
 });
 // 匯出路由模組
 module.exports = router
