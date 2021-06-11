@@ -15,16 +15,16 @@ db.once('open', async () => {
             Record.create({
                 name: record.name,
                 category: record.category,
-                category_en : record.category_en,
+                category_en: record.category_en,
                 date: record.date,
                 amount: record.amount
             }).then(() => {
                 console.log('record seeder insert done')
-                return db.close()
-            }).then(() => {
                 console.log('database connection close')
+                process.exit()
             })
         })
+        
     } catch (e) {
         console.warn(e)
     } 

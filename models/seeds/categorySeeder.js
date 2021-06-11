@@ -19,13 +19,12 @@ db.once('open',  async() => {
                 cateIcon3x : category.cateIcon3x
             }).then(() => {
                 console.log('cateseeder insert done')
-                return db.close()
-            }).then(() => {
                 console.log('database connection close')
+                process.exit()       
             })
         })
     }
     catch (e) {
     console.warn(e)
-  }
+    }
 })
