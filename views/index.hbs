@@ -1,15 +1,23 @@
 <div class="container">
+   
   <div class="form-group selectpicker-section">
-    <label for="exampleFormControlSelect1"></label>
-    <select class="selectpicker show-tick" data-style="btn-info">
+    <label for="categorySelect"></label>
+    <form action="/search" method="GET" id="selectByCategory"></form>
+    <select class="selectpicker show-tick" data-style="btn-info" onchange="submit();" form="selectByCategoy" name="categorySelect">
       <option>類別</option>
-      <option data-icon="fas fa-utensils">餐飲食品</option>
-      <option data-icon="fas fa-home">居家物業</option>
-      <option data-icon="fas fa-grin-beam">休閒娛樂</option>
-      <option data-icon="fas fa-shuttle-van">交通出行</option>
-      <option data-icon="fas fa-pen">其他</option>
+      <option data-icon="fas fa-utensils" value="food">餐飲食品</option>
+      <option data-icon="fas fa-home" value="home">居家物業</option>
+      <option data-icon="fas fa-grin-beam" value="entertainment">休閒娛樂</option>
+      <option data-icon="fas fa-shuttle-van" value="traffic">交通出行</option>
+      <option data-icon="fas fa-pen" value="others">其他</option>
+
+      {{#each categories}}
+        <option data-icon="{{this.cateIcon}}" value=""> {{this.title}} </option>
+      {{/each}}
     </select>
+    </form>
   </div>
+
 </div>
 
 <div class="container">
@@ -36,9 +44,9 @@
             class="btn btn-success list-item-btn"
           >Modify</button>
         </a>
-        <a href="/records/delete">
-          <button type="button" class="btn btn-danger list-item-btn">Delete</button>
-        </a>
+        <form action="/records/{{ this._id }}?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-danger list-item-btn" onclick="return confirmDelete();">Delete</button>
+        </form>
       </div>
      {{/each}}
     </div>
@@ -49,3 +57,9 @@
     </a>
   </div>
 </div>
+
+<script>
+    function confirmDelete() {
+        return confirm('你確定要刪除該筆紀錄嗎?')
+    }
+</script>

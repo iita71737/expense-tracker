@@ -39,5 +39,15 @@ catch (e) {
     console.warn(e)
 }
 });
+
+router.get('/search', (req, res) => {
+    const keyWord = req.query
+    console.log(keyword)
+    Record.find( {category_en :new RegExp(keyWord, 'i')})
+    .lean()
+    .then( record => res.render('index', { record , keyWord} ))
+    .catch(error => console.error(error))
+})
+
 // 匯出路由模組
 module.exports = router

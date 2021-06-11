@@ -39,17 +39,46 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     const record_id = req.params.id
-
     const config = {
             title: '新增支出',
             action: `/records/${record_id}?_method=PUT`
-        }
-    let categories = await Category.find().lean()
+    }
+    const categories = await Category.find().lean()
 
      Record.findById(record_id)
     .lean()
-    .then(( record ) => res.render('edit', { record , categories}))
+    .then(( record ) => res.render('edit', { config, record , categories}))
     .catch(error => console.log(error))
 });
+
+router.put('/:id', async (req, res) => {
+    const record_id = req.params.id
+    const { name, category_en, date, amount } = req.body
+    
+    const categories = await Category.find().lean()
+    const category_ch = categories.find( item => item.cateName === category_en  ? item.title : "")
+
+    console.log( category_ch)
+
+    Record.findById(record_id)
+        .then(record => {
+            record.name = name
+            record.category = category_ch.title
+            record.category_en = category_ch.cateName
+            record.date = date
+            record.amount = amount
+            return record.save()
+        })
+        .then(() => res.redirect('/'))
+        .catch(err => console.log(err))
+})
+
+router.delete('/:id', (req, res) => {
+  const record_id = req.params.id
+  Record.findById(record_id)
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
 
 module.exports = router
