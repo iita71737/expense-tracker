@@ -2,10 +2,8 @@ const mongoose = require('mongoose')
 const Category = require('../category') // 載入 todo model
 const Record = require('../record')
 
-mongoose.connect('mongodb://localhost/expense-record', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
+const db = require('../../config/mongoose')
 
-console.log('mongodb connected!')
 const categories = require('../../records.json')
 
 
