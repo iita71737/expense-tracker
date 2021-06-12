@@ -4,6 +4,7 @@ const Record = require('../../models/record')
 const Category = require('../../models/category')
 
 router.get('/new', async (req, res) => {
+    try{
     const config = {
         title: '新增支出',
         action: '/records'
@@ -11,9 +12,13 @@ router.get('/new', async (req, res) => {
     let categories = await Category.find().lean()
     //console.log(categories )
     res.render('new', { config, categories })
+}catch (e) {
+    console.warn(e)
+}
 })
 
 router.post('/', async (req, res) => {
+    try{
     const { name, category_en, date, amount } = req.body
     //缺欄位
     console.log(req.body)
@@ -35,9 +40,13 @@ router.post('/', async (req, res) => {
     ).catch(
         err => console.log(err)
     )
+    }catch (e) {
+    console.warn(e)
+}
 })
 
 router.get('/:id', async (req, res) => {
+     try{
     const record_id = req.params.id
     const config = {
             title: '新增支出',
@@ -49,9 +58,13 @@ router.get('/:id', async (req, res) => {
     .lean()
     .then(( record ) => res.render('edit', { config, record , categories}))
     .catch(error => console.log(error))
-});
+}catch (e) {
+    console.warn(e)
+}
+})
 
 router.put('/:id', async (req, res) => {
+    try{
     const record_id = req.params.id
     const { name, category_en, date, amount } = req.body
     
@@ -71,14 +84,23 @@ router.put('/:id', async (req, res) => {
         })
         .then(() => res.redirect('/'))
         .catch(err => console.log(err))
+}
+catch (e) {
+    console.warn(e)
+}
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async(req, res) => {
+    try{
   const record_id = req.params.id
   Record.findById(record_id)
     .then(record => record.remove())
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
+    }
+    catch (e) {
+    console.warn(e)
+    }
 })
 
 module.exports = router
