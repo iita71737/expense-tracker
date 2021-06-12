@@ -80,6 +80,10 @@
   border-radius: 10px;
 }
 
+.datepicker {
+  margin-bottom: 3rem;
+}
+
 .btn-wrapper {
   margin: 15px;
   display: flex;
