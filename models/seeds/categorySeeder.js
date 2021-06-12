@@ -1,9 +1,5 @@
-const mongoose = require('mongoose')
 const Category = require('../category') // 載入 todo model
-const Record = require('../record')
-
 const db = require('../../config/mongoose')
-
 const categories = require('../../records.json')
 
 
