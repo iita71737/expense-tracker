@@ -1,7 +1,7 @@
 // require packages used in the project
 const express = require("express");
 const app = express();
-const port =  process.env.PORT ||  3000; // 如果在 Heroku 環境則使用 process.env.PORT
+const PORT =  process.env.PORT ||  3000; // 如果在 Heroku 環境則使用 process.env.PORT
 const routes = require('./routes')
 // require express-handlebars here
 const exphbs = require('express-handlebars')
@@ -23,6 +23,6 @@ app.use(routes)
 app.use(flash())
 
 // start and listen on the Express server
-app.listen(port, () => {
-  console.log(`Express is listening on localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Express is listening on localhost:${PORT}`);
 });
