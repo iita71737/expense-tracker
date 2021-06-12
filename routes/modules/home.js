@@ -55,6 +55,10 @@ router.get('/filter', async (req, res) => {
     //計算總金額
     let totalAmount = records.reduce((prev, record) => prev += record.amount, 0)
 
+    // console.log('keyWord',keyWord)
+    // console.log('=================')
+    // console.log('categories',categories)
+
     res.render('index', { 
         records,
         categories,

@@ -18,6 +18,9 @@ Use **Node.js** , **Express.js** and **Express-handlebars** to build in
 - __[Express Handlebars](https://www.npmjs.com/package/express-handlebars)__
 - __[Mongoose](https://mongoosejs.com/)__
 - __[Mongodb](https://www.mongodb.com/)__
+- __[just-handlebars-helpers](https://www.npmjs.com/package/just-handlebars-helpers)__
+- __[method-override](https://www.npmjs.com/package/method-override)__
+
 
 ## Quick start
 
@@ -26,4 +29,5 @@ Several quick start options are available:
 - Clone the repo: `git clone https://github.com/iita71737/expense-tracker.git`
 - On Terminal Window , enter in the project folder `cd expense-tracker` 
 - Install all about this project **package** with [npm](https://www.npmjs.com/): `npm install`
+- Insert the demo data by `npm run seed`
 - Start this project `npm run dev `
