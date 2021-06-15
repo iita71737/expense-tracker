@@ -1,16 +1,22 @@
 <div class="container">
-   
+
   <div class="form-group selectpicker-section">
     <label for="categorySelect"></label>
     <form action="/filter" method="GET" id="selectByCategory">
-    <select class="selectpicker show-tick" data-style="btn-info" onchange="onChange()" name="categorySelect">
-      <option> 類別 </option>
+      <select class="selectpicker show-tick" data-style="btn-info" onchange="onChange()" name="categorySelect">
+        {{#if KeyWord}}
+        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName KeyWord) }} SELECTED
+          {{/if}}> {{this.title}}</option>
+        {{else}}
+        <option> 類別 </option>
+        {{/if}}
 
-      {{#each categories}}
-        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName KeyWord) }} SELECTED {{/if}}> {{this.title}}</option>
-      {{/each}}
+        {{#each categories}}
+        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName KeyWord) }} SELECTED
+          {{/if}}> {{this.title}}</option>
+        {{/each}}
 
-    </select>
+      </select>
     </form>
   </div>
 
@@ -26,7 +32,7 @@
 <div class="container">
   <div class="list-wrapper">
     <div class="list-group">
-        {{#each records }}
+      {{#each records }}
       <div class="list-items">
         <a href="#" class="item-name list-group-item-action list-item">
           <div class="item-icon"><i class="{{this.iconName.cateIcon3x}}"></i></div>
@@ -35,16 +41,13 @@
           <div class="item-cost">{{this.amount}}</div>
         </a>
         <a href="/records/{{this._id}}">
-          <button
-            type="button"
-            class="btn btn-success list-item-btn"
-          >Modify</button>
+          <button type="button" class="btn btn-success list-item-btn">Modify</button>
         </a>
         <form action="/records/{{ this._id }}?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger list-item-btn" onclick="return confirmDelete();">Delete</button>
         </form>
       </div>
-     {{/each}}
+      {{/each}}
     </div>
   </div>
   <div class="btn-wrapper">
@@ -55,12 +58,12 @@
 </div>
 
 <script>
-    function confirmDelete() {
-        return confirm('你確定要刪除該筆紀錄嗎?')
-    }
-     function onChange(e) {
-          let form =  document.getElementById("selectByCategory")
-          form.submit()      
-        }
-  
+  function confirmDelete() {
+    return confirm('你確定要刪除該筆紀錄嗎?')
+  }
+  function onChange(e) {
+    let form = document.getElementById("selectByCategory")
+    form.submit()
+  }
+
 </script>
