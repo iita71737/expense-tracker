@@ -5,7 +5,7 @@
     </div>
     <div class="form-group ">
         <label class="form-label" for="exampleFormControlInput1">名稱*：</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="name"
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Item name..." name="name"
             value="{{ record.name }}" required>
     </div>
     <div class="form-group ">
@@ -19,7 +19,7 @@
     <div class="form-group">
         <label for="exampleFormControlSelect1" class="form-label">類別*：</label>
         <select class="form-control form-select" id="exampleFormControlSelect1" name="category_en" required>
-            <option value="" selected >Open this select menu</option>
+            <option value="" selected >Select the category...</option>
             {{#each categories}}
                 <option value="{{ this.cateName }}" {{#if (eq this.cateName 'this.cateName' )}}selected{{/if}}>
                     {{ this.title }}
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group ">
         <label for="exampleFormControlInput1" class="form-label">金額*：</label>
-        <input type="text" class="form-control " id="exampleFormControlInput1" placeholder="name@example.com" name="amount" required>
+        <input type="number" class="form-control " id="exampleFormControlInput1" placeholder="input the cost..." name="amount" required>
     </div>
     <button type="submit" class="btn btn-primary">新增支出</button>
 </form>

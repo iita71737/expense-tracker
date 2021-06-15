@@ -6,8 +6,8 @@ const routes = require('./routes')
 // require express-handlebars here
 const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars');
-const H = require('just-handlebars-helpers')
-H.registerHelpers(Handlebars)
+const justhbs = require('just-handlebars-helpers')
+justhbs.registerHelpers(Handlebars)
 const flash = require('connect-flash')
 const methodOverride = require('method-override')
 
