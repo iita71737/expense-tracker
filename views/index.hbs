@@ -4,20 +4,15 @@
     <label for="categorySelect"></label>
     <form action="/filter" method="GET" id="selectByCategory">
       <select class="selectpicker show-tick" data-style="btn-info" onchange="onChange()" name="categorySelect">
-        {{#if KeyWord}}
-        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName KeyWord) }} SELECTED
-          {{/if}}> {{this.title}}</option>
-        {{else}}
         <option> 類別 </option>
-        {{/if}}
-
         {{#each categories}}
-        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName KeyWord) }} SELECTED
+        <option data-icon="{{this.cateIcon}}" value="{{this.cateName}}" {{#if (eq this.cateName ../keyWord) }} SELECTED
           {{/if}}> {{this.title}}</option>
         {{/each}}
 
       </select>
     </form>
+
   </div>
 
 </div>
